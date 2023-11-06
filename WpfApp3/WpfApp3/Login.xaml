@@ -1,0 +1,34 @@
+﻿<Page x:Class="WpfApp3.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+        d:DesignHeight="900" d:DesignWidth="1600"
+  Title="Login">
+
+    <Grid Margin="0" Name="mainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/background.jpg"/>
+        </Grid.Background>
+
+
+        <GroupBox VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Height="450" BorderThickness="0"   FontSize="36" FontStyle="Italic" Foreground="White">
+            <GroupBox.Background>
+                <SolidColorBrush Color="Black" Opacity="0.8"/>
+
+            </GroupBox.Background>
+
+            <Image HorizontalAlignment="Center" Height="162" VerticalAlignment="Top" Width="171" Source="/icon-stem.png"/>
+
+        </GroupBox>
+        <TextBox HorizontalAlignment="Center" FontSize="20"   Name="txtUsername" TextAlignment="Justify" TextWrapping="Wrap"  VerticalAlignment="Center" Width="250" Height="30" Margin="0,10,0,0"/>
+        <PasswordBox  HorizontalAlignment="Center"  FontSize="20"   VerticalAlignment="Center"  Margin="0,100,0,0"  Name="passwordBox" Width="250" Height="30" PasswordChar="*" />
+        <CheckBox Content="Nhớ mật khẩu" HorizontalAlignment="Center" Name="IsRemember" VerticalAlignment="Center"  Margin="0,170,0,0" Width="250" Background="White" Foreground="#FFEAEAEA"/>
+        <!--<TextBox HorizontalAlignment="Center" Name="txtPassword" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="250" Height="30"/>-->
+        <Button Content="ĐĂNG NHẬP" Name="btnLogin" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Center" Height="30" Width="250" Background="#FF4679E7" Foreground="White" FontWeight="Bold" Click="btnLogin_Click"/>
+        <Button Content="DẠY OFFLINE" Name="btnOffline"  HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Center" Height="30" Width="250" Background="#FF4679E7" Foreground="White" FontWeight="Bold" Click="btnOffline_Click"/>
+    </Grid>
+
+</Page>

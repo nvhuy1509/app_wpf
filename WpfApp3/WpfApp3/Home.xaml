@@ -1,0 +1,55 @@
+﻿<Page x:Class="WpfApp3.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home"
+        Loaded="Page_Loaded">
+
+    <Grid Name="homeGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/background.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<Border  BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">-->
+        <Grid>
+            <ComboBox Width="90" HorizontalAlignment="Left" Name="SelectPackage" VerticalAlignment="Top" Margin="17,10,0,13">
+                <ComboBoxItem Content="Chọn khối" IsSelected="True"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Width="120" HorizontalAlignment="Left" Name="SelectSubject" VerticalAlignment="Top" Margin="117,10,0,13">
+                <ComboBoxItem Content="Chọn môn" IsSelected="True"></ComboBoxItem>
+            </ComboBox>
+            <TextBox HorizontalAlignment="Left"  Name="txtSearch" TextAlignment="Justify" TextWrapping="Wrap"  VerticalAlignment="Top" Width="230" Height="24" Margin="247,10,0,13"/>
+            <Button Content="Tìm kiếm" Name="btnSearch" HorizontalAlignment="Left" Margin="490,10,0,13" VerticalAlignment="Top" Height="24" Width="100" Background="#FF4679E7" Foreground="White" FontWeight="Bold" Click="btnSearch_Click"/>
+            <Image gif:ImageBehavior.AnimatedSource="Spin.gif"  HorizontalAlignment="Left" Height="25" Margin="600,10,0,13" VerticalAlignment="Top" Width="25" Name="GifLoading"  Visibility="Collapsed"/>
+            <Image HorizontalAlignment="Right" Height="25" Margin="0,10,310,00" VerticalAlignment="Top" Width="25" Source="/3237472.png" />
+            <TextBlock VerticalAlignment="Top"  Height="25" TextAlignment="Justify" FontSize="19" Name="NameUser" HorizontalAlignment="Right" Margin="0,10,230,00" Foreground="White" />
+            <Button Content="Lịch sử tải" Name="btnHistory" HorizontalAlignment="Right" Margin="0,10,20,00" VerticalAlignment="Top" Height="24" Width="100" Background="#FF4679E7" Foreground="White" FontWeight="Bold" Click="btnHistory_Click"/>
+        </Grid>
+        <ScrollViewer Grid.Row="0" Grid.Column="0"  Margin="0,43,0,13"  CanContentScroll="True"  >
+            <ItemsControl Name="listFilePP">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate >
+                    <DataTemplate>
+                        <local:Item MyData="{Binding}" Margin="10" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <!--</Border>-->
+        <!--<Button Content="Trở về"  x:Name="btnBack" Margin="230,59,1276,805" Background="#FF007BFF" BorderBrush="#FF007BFF" Foreground="#FFEDE6E6" FontSize="18" FontWeight="Bold"  Click="btnBack_Click"/>-->
+    </Grid>
+</Page>
